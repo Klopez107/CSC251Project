@@ -4,7 +4,6 @@ public class Room {
     private double roomLength;
     private double roomWidth;
     private String shadeAmount;
-    private double btuNeeded;
 
     /**
      * Construcor with no args
@@ -14,7 +13,6 @@ public class Room {
         roomLength = 0.0;
         roomWidth = 0.0;
         shadeAmount = "";
-        btuNeeded = 0.0;
     }
 
     /**
@@ -23,15 +21,12 @@ public class Room {
      * @param rLength room length 
      * @param rWidth room width 
      * @param sAmount shade amount of the room 
-     * @param btu BTUs needed to heat room
      */
-    public Room(String rName, double rLength, double rWidth, String sAmount, double btu){
+    public Room(String rName, double rLength, double rWidth, String sAmount){
         roomName = rName;
         roomLength = rLength;
         roomWidth = rWidth;
         shadeAmount = sAmount;
-        btuNeeded = btu;
-
     }
 
     /**
@@ -56,10 +51,6 @@ public class Room {
          shadeAmount = sAmount;
      }
 
-     public void setBTU(double btu){
-         btuNeeded = btu;
-     }
-
      /**
       * Getters
       a acccesor to get the value of fields in the class
@@ -81,10 +72,6 @@ public class Room {
           return shadeAmount;
       }
 
-      public double getBTU(){
-          return btuNeeded;
-      }
-
       /**
        * Area method 
        * No arg method that returns area 
@@ -101,6 +88,7 @@ public class Room {
        */
 
        public double getBTUs(){
+           double btuNeeded;
            double area = roomLength * roomWidth;
 
            if(area < 250){

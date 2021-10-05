@@ -1,8 +1,11 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Project_Kevin_Lopez {
     
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
+
+        PrintWriter outputFile = new PrintWriter("Rooms.txt");
 
         //Create Input Scanner 
         Scanner keyboard = new Scanner(System.in);

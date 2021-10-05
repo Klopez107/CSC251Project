@@ -41,20 +41,24 @@ public class Project_Kevin_Lopez {
             //Add Object to Array 
             roomList.add(customerRoom);
 
-            //Print results by iterating over ArrayList 
-            for(int i = 0; i < roomList.size(); i++){
-
-                //Refrence object in the Array List to call methods 
-                customerRoom = roomList.get(i);
-                
-                System.out.println("\nRoom name: " + customerRoom.getName());
-                System.out.println("\nRoom Area (in square feet): " + customerRoom.getArea());
-                System.out.println("\nAmount ot shade: " + customerRoom.getShade());
-                System.out.printf("\nBTUs per hour needed: %,.0f\n",  customerRoom.getBTUs());
-            }
-
+           
         }
 
+        //Close file
+        inputFile.close();
+
+         //Print results by iterating over ArrayList 
+         for(int i = 0; i < roomList.size(); i++){
+
+            //Refrence object in the Array List to call methods 
+            Room customerRoom = roomList.get(i);
+            
+            //Print results 
+            System.out.println("\nRoom name: " + customerRoom.getName());
+            System.out.println("\nRoom Area (in square feet): " + customerRoom.getArea());
+            System.out.println("\nAmount ot shade: " + customerRoom.getShade());
+            System.out.printf("\nBTUs per hour needed: %,.0f\n",  customerRoom.getBTUs());
+        }
     }
     
 }

@@ -5,60 +5,55 @@ public class Project_Kevin_Lopez {
     
     public static void main(String[] args) throws IOException{
 
-        PrintWriter outputFile = new PrintWriter("Rooms.txt");
+        //Read Rooms.txt File
+        File file = new File("Rooms.txt");
 
         //Create Input Scanner 
-        Scanner keyboard = new Scanner(System.in);
+        Scanner inputFile = new Scanner(file);
 
         //Variables needed
         String roomName;
         double roomLength;
         double roomWidth;
-        int shadeChoice;
-        String shadeAmount;
+        String shadeAmount = "";
+        int littleRooms = 0, moderateRooms = 0, abundantRooms = 0;
+
+        //ArrayList to hold room objects
+        ArrayList<Room> roomList = new ArrayList<>();
 
 
-        //Variables for shade amount 
-        final String SHADE_DEFAULT = "Moderate";
-        final String SHADE_CHOICE1 = "Little";
-        final String SHADE_CHOICE3 = "Abundant";
+        //Read The file
+        while(inputFile.hasNext()){
 
-        //Get the necessary inputs  
-        System.out.print("Please enter the name of the room: ");
-        roomName = keyboard.nextLine();
+            roomName = inputFile.nextLine();
+            roomLength = inputFile.nextDouble();
+            roomWidth = inputFile.nextDouble();
+            inputFile.nextLine();
+            shadeAmount = inputFile.nextLine();
 
-        System.out.print("Please enter the length of the room(in feet): ");
-        roomLength = keyboard.nextDouble();
+            if(inputFile.hasNext()){
+                inputFile.nextLine();
+            }
 
-        System.out.print("Please enter the width of the room(in feet): ");
-        roomWidth = keyboard.nextDouble();
+            //Create Object 
+            Room customerRoom = new Room(roomName, roomLength, roomWidth, shadeAmount);
 
-        System.out.println("What is the amount of shade that this room receives?");
-        System.out.println("\n1. Little shade");
-        System.out.println("2. Moderate shade");
-        System.out.println("3. Abudent Shade");
-        System.out.print("\nPlease select from the options above: ");
-        shadeChoice = keyboard.nextInt();
+            //Add Object to Array 
+            roomList.add(customerRoom);
 
-        //Shade amount should change depending on choice 
-        shadeAmount = SHADE_DEFAULT;
+            //Print results by iterating over ArrayList 
+            for(int i = 0; i < roomList.size(); i++){
 
-        if(shadeChoice == 1){
-            shadeAmount = SHADE_CHOICE1;
+                //Refrence object in the Array List to call methods 
+                customerRoom = roomList.get(i);
+                
+                System.out.println("\nRoom name: " + customerRoom.getName());
+                System.out.println("\nRoom Area (in square feet): " + customerRoom.getArea());
+                System.out.println("\nAmount ot shade: " + customerRoom.getShade());
+                System.out.printf("\nBTUs per hour needed: %,.0f\n",  customerRoom.getBTUs());
+            }
+
         }
-        if(shadeChoice == 3){
-            shadeAmount = SHADE_CHOICE3;
-        }
-
-        //Create object for room 
-        Room customerRoom = new Room(roomName, roomLength, roomWidth, shadeAmount);
-
-        //Output data 
-        System.out.println("Room name: " + customerRoom.getName());
-        System.out.println("Room Area (in square feet): " + customerRoom.getArea());
-        System.out.println("Amounf ot shade " + customerRoom.getShade());
-        System.out.println("BTUs per hour needed: " +  customerRoom.getBTUs());
-
 
     }
     

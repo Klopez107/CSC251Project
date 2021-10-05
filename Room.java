@@ -88,7 +88,7 @@ public class Room {
        */
 
        public double getBTUs(){
-           double btuNeeded;
+           double btuNeeded = 0.0;
            double area = roomLength * roomWidth;
 
            if(area < 250){
@@ -101,12 +101,11 @@ public class Room {
                btuNeeded = 24000;
            }
 
-
-           if(shadeAmount == "Little"){
+           if(shadeAmount.equals("Little")){
                btuNeeded *= 1.15;
            }
 
-           if(shadeAmount == "Abundant"){
+           if(shadeAmount.equals("Abundant")){
                btuNeeded *= .90;
            }
 

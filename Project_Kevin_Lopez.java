@@ -18,6 +18,11 @@ public class Project_Kevin_Lopez {
         String shadeAmount = "";
         int littleRooms = 0, moderateRooms = 0, abundantRooms = 0;
 
+        //Variables for AirConditioner object
+        String manufacturer;
+        String type;
+        double btuCapacity;
+
         //ArrayList to hold room objects
         ArrayList<Room> roomList = new ArrayList<>();
 
@@ -30,13 +35,21 @@ public class Project_Kevin_Lopez {
             roomWidth = inputFile.nextDouble();
             inputFile.nextLine();
             shadeAmount = inputFile.nextLine();
+            manufacturer = inputFile.nextLine();
+            type = inputFile.nextLine();
+            btuCapacity = inputFile.nextDouble();
+            inputFile.nextLine();
+
 
             if(inputFile.hasNext()){
                 inputFile.nextLine();
             }
 
-            //Create Object 
-            Room customerRoom = new Room(roomName, roomLength, roomWidth, shadeAmount);
+            //Create Air Conditioner object 
+            AirConditioner airConditioner = new AirConditioner(manufacturer, type, btuCapacity);
+
+            //Create Room Object 
+            Room customerRoom = new Room(roomName, roomLength, roomWidth, shadeAmount, airConditioner);
 
             //Add Object to Array 
             roomList.add(customerRoom);

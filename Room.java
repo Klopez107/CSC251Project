@@ -132,7 +132,7 @@ public class Room {
             //Create boolean value 
             boolean bool = false;
 
-            if(getBTUs() < airConditioner.getBTUCapacity()){
+            if(getBTUs() <= airConditioner.getBTUCapacity()){
                 bool = true;
             }
 
@@ -144,10 +144,11 @@ public class Room {
      * @return a String that has all the info of the object 
      */
     public String toString(){
-        return String.format("Room Name: " + roomName +
-                             "\nRoom Aread(in square feet): " + getArea() +
-                             "\nBTU's per Hour Needed: %,.2f" + 
-                             "\n" + airConditioner.toString(), getBTUs());
+        return String.format("\nRoom Name: " + roomName +
+                             "\n\nRoom Area(in square feet): " + getArea() +
+                             "\n\nAmount of Shade: " + getShade() +
+                             "\n\nBTU's per Hour Needed: %,.0f" + 
+                             "\n\n" + airConditioner.toString(), getBTUs());
     }
 
     

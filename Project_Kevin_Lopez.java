@@ -6,7 +6,7 @@ public class Project_Kevin_Lopez {
     public static void main(String[] args) throws IOException{
 
         //Read Rooms.txt File
-        File file = new File("Rooms.txt");
+        File file = new File("Rooms2.txt");
 
         //Create Input Scanner 
         Scanner inputFile = new Scanner(file);
@@ -37,9 +37,11 @@ public class Project_Kevin_Lopez {
             manufacturer = inputFile.nextLine();
             type = inputFile.nextLine();
             btuCapacity = inputFile.nextDouble();
-            inputFile.nextLine();
 
 
+            if(inputFile.hasNext()){
+                inputFile.nextLine();
+            }
             if(inputFile.hasNext()){
                 inputFile.nextLine();
             }
@@ -65,11 +67,16 @@ public class Project_Kevin_Lopez {
             //Refrence object in the Array List to call methods 
             Room customerRoom = roomList.get(i);
             
-            //Print results 
-            System.out.println("\nRoom name: " + customerRoom.getName());
-            System.out.println("\nRoom Area (in square feet): " + customerRoom.getArea());
-            System.out.println("\nAmount ot shade: " + customerRoom.getShade());
-            System.out.printf("\nBTUs per hour needed: %,.0f\n",  customerRoom.getBTUs());
+    
+            //Display all results. As there is a toString method calling the object will display 
+            System.out.println(customerRoom);
+
+            //If-Else to state if room is cooled correctly or not 
+            if(customerRoom.hasAdaueteCooling()){
+                System.out.println("\nThe room is adequately cooled.");
+            }else{
+                System.out.println("\nThe room is not adequately cooled.");
+            }
         }
 
  

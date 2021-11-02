@@ -58,9 +58,9 @@ public class AirConditioner {
      * A toString method to display the contents of the object
      */
     public String toString(){
-        String str = "Manufacturer: " + manufacturer +
-                     "\nType: " + type + 
-                     "\nBTU Cooling Capacity: " + btuCapacity;
+        String str = "Air Conditioner Manufacturer: " + manufacturer +
+                     "\nAir Conditioner Type: " + type + 
+                     "\nAir Conditioner BTU Cooling Capacity: " + btuCapacity;
         
         return str;
 

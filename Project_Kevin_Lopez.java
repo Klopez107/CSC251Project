@@ -16,7 +16,6 @@ public class Project_Kevin_Lopez {
         double roomLength;
         double roomWidth;
         String shadeAmount = "";
-        int littleRooms = 0, moderateRooms = 0, abundantRooms = 0;
 
         //Variables for AirConditioner object
         String manufacturer;
@@ -65,11 +64,6 @@ public class Project_Kevin_Lopez {
 
             //Refrence object in the Array List to call methods 
             Room customerRoom = roomList.get(i);
-
-            //Check For shade counters 
-            if(customerRoom.getShade().equals("Little")) littleRooms++;
-            if(customerRoom.getShade().equals("Moderate")) moderateRooms++;
-            if(customerRoom.getShade().equals("Abundant")) abundantRooms++;
             
             //Print results 
             System.out.println("\nRoom name: " + customerRoom.getName());
@@ -78,10 +72,6 @@ public class Project_Kevin_Lopez {
             System.out.printf("\nBTUs per hour needed: %,.0f\n",  customerRoom.getBTUs());
         }
 
-        //Print the number of rooms with x amount of shade results 
-        System.out.println("\nNumber of rooms with little shade: " + littleRooms);
-        System.out.println("\nNumber of rooms with moderate shade: " + moderateRooms);
-        System.out.println("\nNumber of rooms with abudant shade: " + abundantRooms);
  
     }
     

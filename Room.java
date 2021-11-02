@@ -139,5 +139,16 @@ public class Room {
             return bool;
         }
 
+    /**
+     * toString method to display the info of the object 
+     * @return a String that has all the info of the object 
+     */
+    public String toString(){
+        return String.format("Room Name: " + roomName +
+                             "\nRoom Aread(in square feet): " + getArea() +
+                             "\nBTU's per Hour Needed: %,.2f" + 
+                             "\n" + airConditioner.toString(), getBTUs());
+    }
+
     
 }

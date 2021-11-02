@@ -123,5 +123,21 @@ public class Room {
 
        }
 
+       /**
+        * Method to check if air conditioner has adaquete cooling
+        * Will check if the btu's needed to cool the room is more or less than the air conditioner's capability 
+        *@return true if the conditioner has more capacity, returns false if not
+        */
+        public boolean hasAdaueteCooling(){
+            //Create boolean value 
+            boolean bool = false;
+
+            if(getBTUs() < airConditioner.getBTUCapacity()){
+                bool = true;
+            }
+
+            return bool;
+        }
+
     
 }

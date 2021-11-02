@@ -4,6 +4,7 @@ public class Room {
     private double roomLength;
     private double roomWidth;
     private String shadeAmount;
+    private AirConditioner airConditioner;
 
     /**
      * Construcor with no args
@@ -22,11 +23,12 @@ public class Room {
      * @param rWidth room width 
      * @param sAmount shade amount of the room 
      */
-    public Room(String rName, double rLength, double rWidth, String sAmount){
+    public Room(String rName, double rLength, double rWidth, String sAmount, AirConditioner airC){
         roomName = rName;
         roomLength = rLength;
         roomWidth = rWidth;
         shadeAmount = sAmount;
+        airConditioner = new AirConditioner(airC);
     }
 
     /**
@@ -51,6 +53,10 @@ public class Room {
          this.shadeAmount = sAmount;
      }
 
+     public void setAirConditioner(AirConditioner airC){
+         this.airConditioner = new AirConditioner(airC);
+     }
+
      /**
       * Getters
       a acccesor to get the value of fields in the class
@@ -70,6 +76,10 @@ public class Room {
 
       public String getShade(){
           return this.shadeAmount;
+      }
+
+      public AirConditioner gAirConditioner(){
+          return new AirConditioner(airConditioner);
       }
 
       /**

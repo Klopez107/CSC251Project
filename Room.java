@@ -35,20 +35,20 @@ public class Room {
      */
 
      public void setName(String rName){
-         roomName = rName;
+         this.roomName = rName;
 
      }
 
      public void setLength(double rLength){
-         roomLength = rLength;
+         this.roomLength = rLength;
      }
 
      public void setWidth(double rWidth){
-         roomWidth = rWidth;
+         this.roomWidth = rWidth;
      }
 
      public void setShade(String sAmount){
-         shadeAmount = sAmount;
+         this.shadeAmount = sAmount;
      }
 
      /**
@@ -57,19 +57,19 @@ public class Room {
       */
 
       public String getName(){
-          return roomName;
+          return this.roomName;
       }
 
       public double getLength(){
-          return roomLength;
+          return this.roomLength;
       }
 
       public double getWidth(){
-          return roomWidth;
+          return this.roomWidth;
       }
 
       public String getShade(){
-          return shadeAmount;
+          return this.shadeAmount;
       }
 
       /**
